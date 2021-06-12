@@ -81,7 +81,8 @@
                             ?>
                                 <td class='btn-group'>
                                   <a href="<?php echo base_url('c_pihakpelaksana/tampil_edit_data_lapangan')?>?nik_alternatif=<?php echo $data_alternatif_editdelete[$list_nik]?>"><button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button></a>
-                                  <a href="<?php echo base_url('c_pihakpelaksana/hapus_data_lapangan')?>?nik_alternatif=<?php echo $data_alternatif_editdelete[$list_nik]?>"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
+                                  <a href="<?php echo base_url('c_pihakpelaksana/hapus_data_lapangan')?>?nik_alternatif=<?php echo $data_alternatif_editdelete[$list_nik]?>"
+                                  onclick="return confirm('Are you sure?')"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
                               </td>
                             <?php
                                 }
@@ -89,6 +90,11 @@
                                 
                             </tbody>
                         </table>
+                        <script language="JavaScript" type="text/javascript">
+                            function checkDelete(){
+                                return confirm('Are you sure?');
+                            }
+                        </script>
                         <script type="text/javascript"> 
                             $(document).ready(function() { 
                                 $("#mytable").dataTable(); 

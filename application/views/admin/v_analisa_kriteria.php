@@ -20,9 +20,47 @@
             <div class="container-fluid dashboard-content ">
                 <!-- CONTENTTTTT -->
                 <div class="card">
-                    <h3 class="card-header">ANALISA PERBANDINGAN BERPASANGAN</h3>
                     <div class="card-body">
-                        
+                        <!-- note nilai perbandingan -->
+                        <h4 class="card-header">NOTE NILAI PERBANDINGAN BERPASANGAN</h4>
+                        <table class="table table-hover" id="mytable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Intensitas Kepentingan</th>
+                                    <th scope="col">Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Kedua elemen sama pentingnya</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Elemen yang satu sedikit lebih penting ketimbang yang lainnya </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Elemen yang satu esensial atau sangat penting ketimbang elemen lainya </td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Satu elemen jelas lebih penting dari elemen yang lainnya</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>Satu elemen mutlak lebih penting ketimbang elemen yang lainnya </td>
+                                </tr>
+                                <tr>
+                                    <td>2,4,6,8</td>
+                                    <td>Nilai-nilai antara di antara dua pertimbangan yang berdekatan </td>
+                                </tr>
+
+                                
+                            </tbody>
+                        </table>
+                        <br>
+                        <h3 class="card-header">ANALISA PERBANDINGAN BERPASANGAN</h3>
                         <?php
                             $number = 0;
                             $i = 0;
@@ -46,6 +84,7 @@
                                         <!-- <th scope="col">Kode 1</th>                                     -->
                                         <th scope="col">Nama Kriteria 1</th>                                    
                                         <th scope="col">Nama kriteria 2</th>
+                                        <!-- <th scope="col">y(x+1)</th> -->
                                         <th scope="col">Tingkat Kepentingan</th>
                                         <th scope="col">Nilai Perbandingan</th>
                                     </tr>
@@ -53,16 +92,17 @@
                                 <tbody>
                                     <?php
                                         $number = 0;                
-                                        $n = $jumlah_n;
+                                        $n = $jumlah_n; //6
                                         for($x=0; $x <= ($n - 2); $x++)
                                         {
                                             for($y=($x+1); $y <= ($n - 1) ; $y++){
-                                                $number ++;                                        
+                                                $number ++;    // number = number + 1 , number = 0 + 1;                                    
                                     ?>
                                                 <tr>
                                                     <th scope="row"><?php echo $number?></th>
                                                     <td> <?php echo $nama_kriteria[$x] ?>  </td>
                                                     <td> <?php echo $nama_kriteria[$y] ?>  </td>
+                                                    <!-- <td> <?php echo $y ?>  </td>     -->
                                                     <td>
                                                         <select name="penting<?php echo $number ?>" class="form-control">
                                                             <option value="1"><?php echo $nama_kriteria[$x] ?></option>

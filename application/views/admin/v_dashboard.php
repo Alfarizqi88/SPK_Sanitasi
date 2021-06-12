@@ -88,8 +88,8 @@
                                 xkey: 'id_bobot',
                                 ykeys: ['nilai_bobot'], 
                                 barColors: ['#a0d0e0', '#3dbeee'],
-                                labels: ['bobot']
-                                // parseTime : false
+                                labels: ['bobot'],
+                                parseTime : false
                                 });
                             </script>
                         </div>

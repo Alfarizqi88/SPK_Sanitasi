@@ -46,7 +46,7 @@
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <p>TIDAK BISA DIHAPUS</p>
+                                <p>Data Tidak Dapat Dihapus</p>
                             </div>
                         <?php
                         }
@@ -55,7 +55,7 @@
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                <p>Data HAPUS</p>
+                                <p>Data Telah Terhapus</p>
                             </div>
                         <?php
                         }    
@@ -87,7 +87,8 @@
                                     <td><?php echo $data_subkriteria['nilai_subkriteria'] ?></td>
                                     <td>
                                         <a href="<?php echo base_url('c_admin/tampil_edit_data_subkriteria')?>?id_subkriteria=<?php echo $data_subkriteria['id_subkriteria']?>"><button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button></a>
-                                        <a href="<?php echo base_url('c_admin/hapus_data_subkriteria')?>?id_subkriteria=<?php echo $data_subkriteria['id_subkriteria']?>"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
+                                        <a href="<?php echo base_url('c_admin/hapus_data_subkriteria')?>?id_subkriteria=<?php echo $data_subkriteria['id_subkriteria']?>"
+                                        onclick="return confirm('Are you sure?')"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
                                     </td>
                                 </tr>
                                 <?php
@@ -95,6 +96,11 @@
                                 ?>    
                             </tbody>
                         </table>
+                        <script language="JavaScript" type="text/javascript">
+                            function checkDelete(){
+                                return confirm('Are you sure?');
+                            }
+                        </script>
                         <script type="text/javascript"> 
                             $(document).ready(function() { 
                                 $("#mytable").dataTable(); 

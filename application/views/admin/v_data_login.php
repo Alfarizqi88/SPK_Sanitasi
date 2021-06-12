@@ -74,7 +74,8 @@
                                     ?>
                                     
                                         <a href="<?php echo base_url('c_admin/tampil_edit_data_login')?>?id_datalogin=<?php echo $data_login['id_datalogin']?>"><button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button></a>
-                                        <a href="<?php echo base_url('c_admin/hapus_data_login')?>?id_datalogin=<?php echo $data_login['id_datalogin'] ?>"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
+                                        <a href="<?php echo base_url('c_admin/hapus_data_login')?>?id_datalogin=<?php echo $data_login['id_datalogin'] ?>"
+                                        onclick="return confirm('Are you sure?')"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
                                     
                                     <?php
                                         }
@@ -86,6 +87,11 @@
                                 ?>
                             </tbody>
                         </table>
+                        <script language="JavaScript" type="text/javascript">
+                            function checkDelete(){
+                                return confirm('Are you sure?');
+                            }
+                        </script>
                         <script type="text/javascript"> 
                             $(document).ready(function() { 
                                 $("#mytable").dataTable(); 

@@ -12,6 +12,23 @@ class C_Pihakpelaksana extends CI_Controller {
 		}
 	}
 
+	function read_manual_book()
+	{
+		$where = array(
+			'user'  => 'pihak_pelaksana'
+		);
+
+		$data['data_manual_book'] = $this->model_data->pilih_data($where,'data_manual_book');
+		// var_dump($data['data_manual_book'][0]['file']);die();
+		if($data['data_manual_book']==null){
+			$this->session->set_flashdata('error', 'File PDF tidak ada ');
+		}
+
+		$this->load->view('pihakpelaksana/v_sidebar_pihakpelaksana');
+		$this->load->view('pihakpelaksana/v_navbar_pihakpelaksana');
+		$this->load->view('admin/v_read_manual_book' , $data);
+	}
+
 	public function index()
 	{
 		$data['total_data_alternatif'] = $this->model_data->get_count('data_alternatif');
@@ -82,7 +99,7 @@ class C_Pihakpelaksana extends CI_Controller {
 		$data_alternatif_lengkap_nilai=[];
 		$data_alternatif_editdelete=[];
 		foreach($tampil_data_lapangan as $key => $value){
-			$data_alternatif_lengkap[$key] = ($value['nik_alternatif']."-".$value['nama_alternatif']."-".$value['nama_dusun']);
+			$data_alternatif_lengkap[$key] = ($value['nik_alternatif']."-".$value['nama_alternatif']."-".$value['nama_dusun']."-".$value['rt']."-".$value['rw']);
 			$data_alternatif_editdelete[$key]= $value['nik_alternatif'];
 
 			$data_alternatif_lengkap_nilai[$key] = ($value['nik_alternatif']."-".$value['nama_alternatif']);

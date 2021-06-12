@@ -31,6 +31,85 @@ class C_Admin extends CI_Controller {
 		$this->load->view('admin/v_dashboard',$data);
 		
 	}
+
+	public function upload_manual_book()
+	{
+		$data['data_manual_book'] = $this->model_data->data('user','data_manual_book');
+		$data['jumlah_upload'] = count($data['data_manual_book']);
+
+		$this->load->view('admin/v_side_bar');
+		$this->load->view('admin/v_navbar');
+		$this->load->view('admin/v_upload_manual_book' , $data);
+	}
+
+	public function do_upload()
+	{
+		// setting konfigurasi upload
+           
+		$config['upload_path'] = "./uploads";  
+		// print_r($config['upload_path']);die();
+				
+		
+		// $config['upload_path'] = './uploads/';
+		$config['allowed_types'] = 'pdf';
+		$config['max_size']=0;
+		//setting max size php.ini (apache xampp) cari yang mb
+		
+
+		//proses upload
+		$this->upload->initialize($config);
+
+		// print_r($this->upload->initialize($config));die();
+		
+		if (!$this->upload->do_upload('file')) {
+			$error = array('error' =>  $this->upload->display_errors());
+			// menampilkan pesan error
+			$this->session->set_flashdata('error', 'file tidak sesuai ketentuan , HARUS PDF!!');
+			redirect('c_admin/upload_manual_book');
+			// $this->load->view('v_upload',$error);
+			//  print_r($error);
+		} else {
+			$this->session->set_flashdata('success', 'berhasil di upload');
+			$result = $this->upload->data();
+            $list_user = $this->input->post('list_user');
+
+			$data_insert = array(
+				'user'  => $list_user,
+				'file' => $result['file_name']
+			);
+			
+			$this->model_data->insert($data_insert,'data_manual_book');
+			redirect('c_admin/upload_manual_book');
+
+		}
+	}
+
+	public function hapus_manual_book()
+	{
+		$id_manual_book = $this->input->get('id_manual_book');
+
+		$where = array(            
+            'id_manual_book' =>  $id_manual_book
+        );
+        $this->model_data->delete_data($where,'data_manual_book');
+     	redirect('c_admin/upload_manual_book');		   
+	}
+
+	function read_manual_book()
+	{
+		$where = array(
+			'user'  => 'admin'
+		);
+
+		$data['data_manual_book'] = $this->model_data->pilih_data($where,'data_manual_book');
+		if($data['data_manual_book']==null){
+			$this->session->set_flashdata('error', 'File PDF tidak ada ');
+		}
+		// var_dump($data['data_manual_book'][0]['file']);die();
+		$this->load->view('admin/v_side_bar');
+		$this->load->view('admin/v_navbar');
+		$this->load->view('admin/v_read_manual_book' , $data);
+	}
 	
 	//data alternatif/masyarakat
 	public function data_alternatif()
@@ -377,7 +456,7 @@ class C_Admin extends CI_Controller {
 		$data['data_kriteria1'] = $this->model_data->data('kode_kriteria','data_kriteria');
 		$data['data_kriteria2'] = $this->model_data->data('kode_kriteria','data_kriteria');
 		
-		
+		// looping hitung matrik awal
 		for ($x=0; $x <= ($n-2) ; $x++) {
 			for ($y=($x+1); $y <= ($n-1) ; $y++) {
 				$urut++;
@@ -438,7 +517,9 @@ class C_Admin extends CI_Controller {
 			}
 		}
 		
+		
 		//hapus
+		//matrikb=matrik bobot
 		for ($x=0; $x <= ($n-1) ; $x++) {
 			for ($y=0; $y <= ($n-1) ; $y++) {
 				$matrikb[$x][$y] = $matrik[$x][$y] / $jmlmpb[$y];

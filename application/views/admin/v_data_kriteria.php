@@ -26,13 +26,9 @@
                 <!-- CONTENTTTTT -->
                 <div class="card">
                     <h3 class="card-header">DATA KRITERIA
-                        <?php if($jumlah_n <= 6) 
-                        {
-                        ?>
+                        
                         <a href="<?php echo base_url('c_admin/tampil_tambah_kriteria') ?>"><button class="btn btn-primary btn-sm float-right mr-6" type="button"><i class="fas fa-plus" ></i> Tambah Data</button></a>
-                        <?php
-                        }
-                        ?>
+                        
                     </h3>
                     <div class="card-body">
                         <?php
@@ -90,7 +86,8 @@
                                     <td><?php echo $data_kriteria['nama_kriteria'] ?></td>                                  
                                     <td>
                                         <a href="<?php echo base_url('c_admin/tampil_edit_data_kriteria')?>?id_kriteria=<?php echo $data_kriteria['id_kriteria']?>"><button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button></a>
-                                        <a href="<?php echo base_url('c_admin/hapus_data_kriteria')?>?id_kriteria=<?php echo $data_kriteria['id_kriteria']?>"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
+                                        <a href="<?php echo base_url('c_admin/hapus_data_kriteria')?>?id_kriteria=<?php echo $data_kriteria['id_kriteria']?>"
+                                        onclick="return confirm('Are you sure?')"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
                                     </td>
                                 </tr>
                                 <?php
@@ -99,6 +96,11 @@
                                 
                             </tbody>
                         </table>
+                        <script language="JavaScript" type="text/javascript">
+                            function checkDelete(){
+                                return confirm('Are you sure?');
+                            }
+                        </script>
                         <script type="text/javascript"> 
                             $(document).ready(function() { 
                                 $("#mytable").dataTable(); 

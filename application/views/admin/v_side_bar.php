@@ -26,7 +26,7 @@
                             <a class="nav-link" href="<?php echo base_url('c_admin') ?>">Dashboard</a> 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url('c_admin/data_alternatif') ?>"><i class="fa fa-fw fa-book"></i>Data Masyarakat</a>
+                            <a class="nav-link" href="<?php echo base_url('c_admin/data_alternatif') ?>"><i class="fa fa-fw fa-address-book"></i>Data Masyarakat</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fab fa-fw fa-readme"></i>Kriteria <span class="badge badge-success">6</span></a>
@@ -59,7 +59,20 @@
                         </li>  
                         <li class="nav-item">
                             <a class="nav-link " href="<?php echo base_url('c_admin/data_hasil_laporan') ?>"><i class="fa fa-fw fa-eye"></i>Hasil Laporan</a>
-                        </li>                          
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-book"></i>Manual Book <span class="badge badge-success">6</span></a>
+                            <div id="submenu-3" class="collapse submenu" style="">
+                                <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo base_url('c_admin/upload_manual_book') ?>">Upload Manual Book</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo base_url('c_admin/read_manual_book') ?>">Read Manual Book</a>
+                                </li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>                            
             </nav>
