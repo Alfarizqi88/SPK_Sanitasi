@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <title>Tambah Data Alternatif</title>
+    <?php error_reporting(0) ?>
 </head>
 
 <body>

@@ -238,15 +238,15 @@ class Model_data extends CI_Model
 	}
 
 
-	function data_survei_lapangan_where($where)
-	{
-		$this->db->select('*');
-		$this->db->from('data_survey_lapangan');	
-		$this->db->where($where);				
-		$query=$this->db->get();			
-		$data= $query->result_array();
-		return $data;
-	}    
+	// function data_survei_lapangan_where($where)
+	// {
+	// 	$this->db->select('*');
+	// 	$this->db->from('data_survey_lapangan');	
+	// 	$this->db->where($where);				
+	// 	$query=$this->db->get();			
+	// 	$data= $query->result_array();
+	// 	return $data;
+	// }    
 
 	// Ambil data total lapangan
 	function data_lapangan()
@@ -259,6 +259,14 @@ class Model_data extends CI_Model
 		// print_r($this->db->last_query()); 
 		return $data;
 	}
+
+	function count_data_lapangan(){			
+		$query=$this->db->query("SELECT count(id_subkriteria) as total_sub FROM data_lapangan group by id_alternatif");
+		$data= $query->result_array();
+		// print_r($this->db->last_query()); 
+		return $data;
+	}
+	
 
 
 	//crud data survei

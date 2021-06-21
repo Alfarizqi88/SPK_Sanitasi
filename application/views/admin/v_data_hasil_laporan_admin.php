@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <title>Hasil Laporan</title>
+    
 </head>
 
 <body>
@@ -26,15 +27,19 @@
         <div class="dashboard-ecommerce">
             <div class="container-fluid dashboard-content ">
                 <!-- CONTENTTTTT -->
-                <div class="card" hidden>
-                    <h3 class="card-header">ANALISA DATA SURVEI LONGLIST</h3>
+                <div class="card">
+                    <h3 class="card-header" hidden>ANALISA DATA SURVEI LONGLIST</h3>
                     <?php
                     if(!$data_kriteria){
                         echo "<br><h3 class='card-body'>Data Kosong</h3>";
                     }
+                    else if($i > 0){
+                        echo "<h3 class='card-header'>HASIL LAPORAN DATA SURVEI LONGLIST</h3>";
+                        echo "<br><h3 class='card-body'>Data survei belum lengkap</h3>";    
+                    }
                     else{
                     ?>
-                    <div class="card-body">                          
+                    <div class="card-body" hidden>                          
                         <table class="table table-hover" id="mytable">
                             <thead>
                                 <tr>
@@ -73,10 +78,9 @@
                             }); 
                         </script> 
                     </div>
-                    <?php
-                    }
-                    ?>
+                    
                 </div>
+
                 <div class="card" hidden>
                     <h3 class="card-header">NORMALISASI DATA SURVEI LONGLIST</h3>
                     <?php
@@ -149,6 +153,7 @@
                     }
                     ?>
                 </div>
+
                 <div class="card">
                     <h3 class="card-header">HASIL LAPORAN DATA SURVEI LONGLIST</h3>
                     <?php
@@ -262,6 +267,10 @@
                     <?php
                     }
                     ?>
+                </div>
+                <?php
+                    }
+                ?>
             </div>
         </div>
     </div>

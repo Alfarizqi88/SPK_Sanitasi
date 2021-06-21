@@ -922,7 +922,8 @@ class C_Admin extends CI_Controller {
 		//data tidak paten
 		$kriteria = $this->model_data->ambil_data_kriteria('data_kriteria');
 		$tampil_data_lapangan = $this->model_data->tampil_data_lapangan();
-		
+		$lapangan = $this->model_data->count_data_lapangan(); 
+		$i=0;
 		$data_kriteria=[];
 		$data_alternatif_lengkap=[];
 		$data_alternatif_nama=[];
@@ -947,6 +948,16 @@ class C_Admin extends CI_Controller {
 		// print_r($data);x	
 		$data['total_kriteria']= count($kriteria);
 		$data['kriteria']= $kriteria;
+		$data['lapangan']= $lapangan;
+		
+		foreach($lapangan as $key => $lap){
+			
+			if($lap["total_sub"] < count($kriteria)){
+				$i++;
+				// var_dump($lap);die();
+			}
+		}
+		$data['i']= $i;
 		if($data_kriteria){
 			$data['data_kriteria']= $data_kriteria;
 			$data['data_alternatif_nama'] =$data_alternatif_nama;
@@ -976,7 +987,8 @@ class C_Admin extends CI_Controller {
 		//data tidak paten
 		$kriteria = $this->model_data->ambil_data_kriteria('data_kriteria');
 		$tampil_data_lapangan = $this->model_data->tampil_data_lapangan();
-		
+		$lapangan = $this->model_data->count_data_lapangan(); 
+		$i=0;
 		$data_kriteria=[];
 		$data_alternatif_lengkap=[];
 		$data_alternatif_lengkap_nilai=[];
@@ -999,6 +1011,17 @@ class C_Admin extends CI_Controller {
 		// print_r($data);x	
 		$data['total_kriteria']= count($kriteria);
 		$data['kriteria']= $kriteria;
+		$data['lapangan']= $lapangan;
+		
+		foreach($lapangan as $key => $lap){
+			
+			if($lap["total_sub"] < count($kriteria)){
+				$i++;
+				// var_dump($lap);die();
+			}
+		}
+		$data['i']= $i;
+
 		if($data_kriteria){
 			$data['data_kriteria']= $data_kriteria;
 			$data['data_alternatif_nama'] =$data_alternatif_nama;

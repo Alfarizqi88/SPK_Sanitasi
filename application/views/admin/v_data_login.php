@@ -68,12 +68,11 @@
                                     <td><?php echo $data_login['password'] ?></td>
                                     <td><?php echo $data_login['level'] ?></td>
                                     <td>
-                                    <?php 
-                                        if($data_login['level'] != 'Admin')
-                                        {
-                                    ?>
-                                    
                                         <a href="<?php echo base_url('c_admin/tampil_edit_data_login')?>?id_datalogin=<?php echo $data_login['id_datalogin']?>"><button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button></a>
+                                    <?php 
+                                    if($data_login['level'] != 'Admin')
+                                    {
+                                    ?>
                                         <a href="<?php echo base_url('c_admin/hapus_data_login')?>?id_datalogin=<?php echo $data_login['id_datalogin'] ?>"
                                         onclick="return confirm('Are you sure?')"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
                                     

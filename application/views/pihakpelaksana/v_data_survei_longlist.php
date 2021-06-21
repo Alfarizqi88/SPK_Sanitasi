@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/dataTables.bootstrap4.css">
     <title>Data Survei Longlist</title>
+    <?php error_reporting(0) ?>
 </head>
 
 <body>
@@ -44,8 +45,7 @@
                         </div>
                     <?php
                         }
-                    ?>  
-                                                 
+                    ?>                         
                         <table class="table table-hover" id="mytable">
                             <thead>
                                 <tr>
@@ -64,7 +64,7 @@
                             <tbody>
                             <?php
                                 $i=0;
-                                $list_nik=-1;
+                                $list_nik=0;
                                 // if($data_kriteria!=null){
                                     foreach($data_kriteria as $nik=>$krit){
                                         echo "<tr>
@@ -74,7 +74,15 @@
                                         foreach($kriteria as $k){
                                           $id_kriteria = $k['id_kriteria'];
                                           echo "<td align='center'>$krit[$id_kriteria]</td>";
-                                          $list_nik++;
+                                        //   $list_nik++;
+                                            switch ($list_nik) {
+                                                case 0:
+                                                    $list_nik = 0;
+                                                    break;
+                                                default:
+                                                    $list_nik++;
+                                                    break;
+                                            }
                                         }
                                 // }
                                 
@@ -85,6 +93,9 @@
                                   onclick="return confirm('Are you sure?')"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
                               </td>
                             <?php
+                                if ($list_nik == 0) {
+                                    $list_nik++;
+                                }
                                 }
                             ?>
                                 

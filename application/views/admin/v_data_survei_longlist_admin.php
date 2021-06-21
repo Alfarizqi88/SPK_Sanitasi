@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/dataTables.bootstrap4.css">
     <title>Data Survei Longlist</title>
+    <?php error_reporting(0) ?>
 </head>
 
 <body>

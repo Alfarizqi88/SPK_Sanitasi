@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 07, 2021 at 04:50 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Host: localhost:3306
+-- Generation Time: Jun 20, 2021 at 09:50 PM
+-- Server version: 10.3.27-MariaDB
+-- PHP Version: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_sandes`
+-- Database: `sandesmy_db_sandes`
 --
 
 -- --------------------------------------------------------
@@ -83,7 +83,7 @@ INSERT INTO `data_alternatif` (`id_alternatif`, `nik_alternatif`, `nama_alternat
 (39, 3507240108650018, 'Mistar', 'Benel', 3, 1),
 (40, 3507241806650001, 'Supaat', 'Benel', 3, 1),
 (41, 3507254208860004, 'Siti Wasiatul Rochmah', 'Benel', 3, 1),
-(42, 3507240103810006, 'Muh. Nur Abidin', 'Benel', 3, 1),
+(42, 3507240103810001, 'Muh. Nur Abidin', 'Benel', 3, 1),
 (43, 3507241204830015, 'Moch Rochim', 'Benel', 4, 1),
 (44, 3507240101650131, 'Suwondo', 'Benel', 4, 1),
 (45, 3507242204720003, 'Moh Khoirul', 'Benel', 4, 1),
@@ -131,7 +131,7 @@ INSERT INTO `data_alternatif` (`id_alternatif`, `nik_alternatif`, `nama_alternat
 (87, 3507241011550005, 'Paiman', 'Benel', 7, 1),
 (88, 3507241209740007, 'Hari Pujiono', 'Benel', 7, 1),
 (89, 3507241710530002, 'Kasan', 'Benel', 7, 1),
-(90, 3507240503700012, 'Kamid', 'Benel', 7, 1),
+(90, 3507240503700012, 'Kamid', 'Benel', 1, 1),
 (91, 3507241011500006, 'Danun', 'Benel', 7, 1),
 (92, 3507242907760003, 'Rohmad', 'Benel', 7, 1),
 (93, 3507241207450005, 'Wasimun', 'Benel', 7, 1),
@@ -652,7 +652,10 @@ INSERT INTO `data_alternatif` (`id_alternatif`, `nik_alternatif`, `nama_alternat
 (615, 3507241902770003, 'Moh. Rohman', 'Lowokjati', 12, 4),
 (616, 3507240204840002, 'Moch. Rohman', 'Lowokjati', 12, 4),
 (617, 3507242011400001, 'Abdul Bai', 'Lowokjati', 12, 4),
-(620, 3507241603530002, 'Sukir', 'Benel', 6, 1);
+(620, 3507241603530002, 'Sukir', 'Benel', 6, 1),
+(621, 3507244101650162, 'Jumakyah', 'Nampes', 2, 2),
+(622, 3507243108550001, 'Rahmad', 'Nampes', 4, 2),
+(623, 3507241204570004, 'Mestro', 'Pakel', 2, 3);
 
 -- --------------------------------------------------------
 
@@ -714,17 +717,11 @@ INSERT INTO `data_lapangan` (`id_lapangan`, `id_alternatif`, `id_subkriteria`) V
 (17, 45, 25),
 (18, 45, 28),
 (19, 54, 1),
-(20, 54, 11),
+(20, 54, 10),
 (21, 54, 15),
 (22, 54, 16),
-(23, 54, 25),
-(24, 54, 27),
-(25, 42, 1),
-(26, 42, 10),
-(27, 42, 15),
-(28, 42, 16),
-(29, 42, 25),
-(30, 42, 27),
+(23, 54, 24),
+(24, 54, 28),
 (31, 21, 1),
 (32, 21, 12),
 (33, 21, 15),
@@ -821,12 +818,6 @@ INSERT INTO `data_lapangan` (`id_lapangan`, `id_alternatif`, `id_subkriteria`) V
 (130, 6, 16),
 (131, 6, 26),
 (132, 6, 30),
-(133, 90, 1),
-(134, 90, 10),
-(135, 90, 15),
-(136, 90, 16),
-(137, 90, 24),
-(138, 90, 28),
 (139, 23, 1),
 (140, 23, 12),
 (141, 23, 15),
@@ -1066,7 +1057,43 @@ INSERT INTO `data_lapangan` (`id_lapangan`, `id_alternatif`, `id_subkriteria`) V
 (381, 620, 15),
 (382, 620, 16),
 (383, 620, 17),
-(384, 620, 19);
+(384, 620, 19),
+(385, 90, 1),
+(386, 90, 10),
+(387, 90, 15),
+(388, 90, 16),
+(389, 90, 24),
+(390, 90, 28),
+(397, 621, 1),
+(398, 621, 10),
+(399, 621, 15),
+(400, 621, 16),
+(401, 621, 24),
+(402, 621, 27),
+(403, 622, 1),
+(404, 622, 10),
+(405, 622, 15),
+(406, 622, 16),
+(407, 622, 24),
+(408, 622, 19),
+(409, 623, 1),
+(410, 623, 10),
+(411, 623, 15),
+(412, 623, 16),
+(413, 623, 24),
+(414, 623, 19),
+(415, 495, 1),
+(416, 495, 10),
+(417, 495, 15),
+(418, 495, 16),
+(419, 495, 17),
+(420, 495, 19),
+(421, 42, 1),
+(422, 42, 10),
+(423, 42, 15),
+(424, 42, 16),
+(425, 42, 25),
+(426, 42, 27);
 
 -- --------------------------------------------------------
 
@@ -1089,8 +1116,28 @@ CREATE TABLE `data_login` (
 --
 
 INSERT INTO `data_login` (`id_datalogin`, `nama`, `divisi`, `no_telepon`, `username`, `password`, `level`) VALUES
-(17, 'User1', 'TFL', '081098765432', 'User', 'user', 'Pihak Pelaksana'),
-(39, 'Alfarizqi Abiyyu', 'D4', '081234567890', 'Admin', 'admin', 'Admin');
+(17, 'User1', 'TFL', '081098765432', 'user', 'user', 'Pihak Pelaksana'),
+(39, 'Alfarizqi Abiyyu', 'D4', '081234567890', 'admin', 'admin', 'Admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_manual_book`
+--
+
+CREATE TABLE `data_manual_book` (
+  `id_manual_book` int(11) NOT NULL,
+  `user` varchar(15) NOT NULL,
+  `file` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_manual_book`
+--
+
+INSERT INTO `data_manual_book` (`id_manual_book`, `user`, `file`) VALUES
+(1, 'pihak_pelaksana', 'MANUAL_BOOK_SISTEM_PIHAK_PELAKSANA.pdf'),
+(2, 'admin', 'MANUAL_BOOK_ADMIN.pdf');
 
 -- --------------------------------------------------------
 
@@ -1190,6 +1237,12 @@ ALTER TABLE `data_login`
   ADD PRIMARY KEY (`id_datalogin`);
 
 --
+-- Indexes for table `data_manual_book`
+--
+ALTER TABLE `data_manual_book`
+  ADD PRIMARY KEY (`id_manual_book`);
+
+--
 -- Indexes for table `data_subkriteria`
 --
 ALTER TABLE `data_subkriteria`
@@ -1210,25 +1263,31 @@ ALTER TABLE `kriteria_bobot`
 -- AUTO_INCREMENT for table `data_alternatif`
 --
 ALTER TABLE `data_alternatif`
-  MODIFY `id_alternatif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=621;
+  MODIFY `id_alternatif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=624;
 
 --
 -- AUTO_INCREMENT for table `data_kriteria`
 --
 ALTER TABLE `data_kriteria`
-  MODIFY `id_kriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_kriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `data_lapangan`
 --
 ALTER TABLE `data_lapangan`
-  MODIFY `id_lapangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=385;
+  MODIFY `id_lapangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=433;
 
 --
 -- AUTO_INCREMENT for table `data_login`
 --
 ALTER TABLE `data_login`
   MODIFY `id_datalogin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
+-- AUTO_INCREMENT for table `data_manual_book`
+--
+ALTER TABLE `data_manual_book`
+  MODIFY `id_manual_book` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `data_subkriteria`

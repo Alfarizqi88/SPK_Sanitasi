@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/dataTables.bootstrap4.css">
     <title>Data Perhitungan MFEP</title>
+    
+    
 </head>
 
 <body>
@@ -32,6 +34,10 @@
                     if(!$data_kriteria){
                         echo "<br><h3 class='card-body'>Data Kosong</h3>";
                     }
+                    else if($i > 0){
+                        echo "<br><h3 class='card-body'>Data survei belum lengkap</h3>";    
+                    }
+                    
                     else{
                     ?>
                     <div class="card-body">              
@@ -72,9 +78,7 @@
                             }); 
                         </script> 
                     </div>
-                    <?php
-                    }
-                    ?>
+                    
                 </div>
                 
                 <div class="card">
@@ -115,15 +119,19 @@
                                 $hitung = 0;
                                 $j=0;
                                 $count_1 = 0;
+                                $count_bobot = 0;
 
                                 foreach($data_alternatif_nik as $nik=>$krit){
                                   echo "<tr>
                                     <td>".(++$i).".</td>
                                     <td>$nik</td>";
-
+                                    $count_bobot = 0;
                                   foreach($kriteria as $k){
                                     $id_kriteria = $k['id_kriteria'];
-                                    $normalisasi = $krit[$id_kriteria]*$bobot[($id_kriteria-1)];
+                                    
+                                    // $normalisasi = $krit[$id_kriteria]*$bobot[($id_kriteria-1)];
+                                    $normalisasi = $krit[$id_kriteria]*$bobot[$count_bobot];
+                                    $count_bobot++;
                                     $hitung = $hitung + $normalisasi;
                                     echo "<td align='center'>$normalisasi </td>";
                                     // echo "<td align='center'>$id_kriteria </td>";
@@ -132,7 +140,7 @@
                             <?php
                                 $arr[] = ["nik" => $nik , "total" => $hitung];
                                 $hitung = 0;
-                                  $j++;
+                                $j++;
                                 }
                             ?>
                             </tbody>
@@ -234,6 +242,10 @@
                     <?php
                     }
                     ?>
+                </div>
+                <?php
+                  }
+                ?>
             </div>
         </div>
     </div>

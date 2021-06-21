@@ -32,6 +32,10 @@
                     if(!$data_kriteria){
                         echo "<br><h3 class='card-body'>Data Kosong</h3>";
                     }
+                    else if($i > 0){
+                        echo "<h3 class='card-header'>HASIL LAPORAN DATA SURVEI LONGLIST</h3>";
+                        echo "<br><h3 class='card-body'>Data survei belum lengkap</h3>";    
+                    }
                     else{
                     ?>
                     <div class="card-body">                          
@@ -73,9 +77,7 @@
                             }); 
                         </script> 
                     </div>
-                    <?php
-                    }
-                    ?>
+                    
                 </div>
                 <div class="card" hidden>
                     <h3 class="card-header">NORMALISASI DATA SURVEI LONGLIST</h3>
@@ -159,8 +161,6 @@
                     else{
                     ?>
                     <div class="card-body">
-                     
-
                     <?php
 
                         function make_comparer() {
@@ -262,6 +262,10 @@
                     <?php
                     }
                     ?>
+                </div>
+                <?php
+                    }
+                ?>
             </div>
         </div>
     </div>

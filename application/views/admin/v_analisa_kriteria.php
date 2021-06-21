@@ -110,7 +110,7 @@
                                                         </select>
                                                     </td>
                                                     <td>
-                                                        <input type ="number" name="nilai<?php echo $number ?>" class="form-control" required></input>
+                                                        <input type ="number" name="nilai<?php echo $number ?>" class="form-control" value="3"required></input>
                                                     <td>
                                                 </tr>
                                     <?php
