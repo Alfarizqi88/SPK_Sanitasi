@@ -89,8 +89,7 @@
                                     <td><?php echo $data_alternatif['rw'] ?></td>
                                     <td >
                                         <a  href="<?php echo base_url('c_admin/tampil_edit_data_alternatif')?>?id_alternatif=<?php echo $data_alternatif['id_alternatif']?>"><button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button></a>
-                                        <a  href="<?php echo base_url('c_admin/hapus_data_alternatif')?>?id_alternatif=<?php echo $data_alternatif['id_alternatif']?>" 
-                                        onclick="return confirm('Are you sure?')"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
+                                        <a  href="<?php echo base_url('c_admin/hapus_data_alternatif')?>?id_alternatif=<?php echo $data_alternatif['id_alternatif']?>"onclick="return confirm('Are you sure?')"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
                                     </td>
                                 </tr>
                                 <?php

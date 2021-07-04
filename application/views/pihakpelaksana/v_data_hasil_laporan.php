@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <title>Hasil Laporan</title>
+    
 </head>
 
 <body>
@@ -26,19 +27,19 @@
         <div class="dashboard-ecommerce">
             <div class="container-fluid dashboard-content ">
                 <!-- CONTENTTTTT -->
-                <div class="card" hidden>
-                    <h3 class="card-header">ANALISA DATA SURVEI LONGLIST</h3>
+                <div class="card" >
+                    <h3 class="card-header" hidden>ANALISA DATA SURVEI LONGLIST</h3>
                     <?php
                     if(!$data_kriteria){
                         echo "<br><h3 class='card-body'>Data Kosong</h3>";
                     }
                     else if($i > 0){
                         echo "<h3 class='card-header'>HASIL LAPORAN DATA SURVEI LONGLIST</h3>";
-                        echo "<br><h3 class='card-body'>Data survei belum lengkap</h3>";    
+                        echo "<br><h3 class='card-body'>Data survei belum lengkap</h3>";     
                     }
                     else{
                     ?>
-                    <div class="card-body">                          
+                    <div class="card-body" hidden>                          
                         <table class="table table-hover" id="mytable">
                             <thead>
                                 <tr>
@@ -114,18 +115,22 @@
                                 }
                                 $total =[];
                                 $hitung = 0;
+                                $count_bobot = 0;
 
                                 foreach($data_alternatif_nik as $nik=>$krit){
                                   echo "<tr>
                                     <td>".(++$i).".</td>
                                     <td>$nik</td>";
+                                    $count_bobot = 0;
                                     $nama=$data_alternatif_nama_alter[$nik];
                                     $nama_dusun=$data_alternatif_nama_dusun[$nik];
                                     $rt_rw=$data_alternatif_nama_rt_rw[$nik];
 
                                   foreach($kriteria as $k){
                                     $id_kriteria = $k['id_kriteria'];
-                                    $normalisasi = $krit[$id_kriteria]*$bobot[($id_kriteria-1)];
+                                    // $normalisasi = $krit[$id_kriteria]*$bobot[($id_kriteria-1)];
+                                    $normalisasi = $krit[$id_kriteria]*$bobot[$count_bobot];
+                                    $count_bobot++;
                                     $hitung = $hitung + $normalisasi;
                                     echo "<td align='center'>$normalisasi </td>";
                                     
@@ -161,6 +166,8 @@
                     else{
                     ?>
                     <div class="card-body">
+                     
+
                     <?php
 
                         function make_comparer() {
@@ -223,7 +230,7 @@
 
                                 foreach($arr as $arr){
                                     $i++;
-                                    if($i<=33){
+                                    if($i<=32){
                                   ?>
                                   <tr>
                                   <td><?php echo $i?></td>

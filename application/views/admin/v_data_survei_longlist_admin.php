@@ -55,15 +55,25 @@
                             <tbody>
                             <?php
                                 $i=0;
+                                $list_nik=0;
                                 foreach($data_kriteria as $nik=>$krit){
                                   echo "<tr>
                                     <td>".(++$i).".</td>
                                     <td>$nik</td>";
 
-                                  foreach($kriteria as $k){
-                                    $id_kriteria = $k['id_kriteria'];
-                                    echo "<td align='center'>$krit[$id_kriteria]</td>";
-                                  }
+                                    foreach($kriteria as $k){
+                                        $id_kriteria = $k['id_kriteria'];
+                                        echo "<td align='center'>$krit[$id_kriteria]</td>";
+                                        //   $list_nik++;
+                                        switch ($list_nik) {
+                                            case 0:
+                                                $list_nik = 0;
+                                                break;
+                                            default:
+                                                $list_nik++;
+                                                break;
+                                        }
+                                    }
                             ?>
                                   
                             <?php

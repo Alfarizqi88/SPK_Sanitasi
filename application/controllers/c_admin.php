@@ -31,8 +31,7 @@ class C_Admin extends CI_Controller {
 		$this->load->view('admin/v_dashboard',$data);
 		
 	}
-
-	public function upload_manual_book()
+		public function upload_manual_book()
 	{
 		$data['data_manual_book'] = $this->model_data->data('user','data_manual_book');
 		$data['jumlah_upload'] = count($data['data_manual_book']);
@@ -456,7 +455,7 @@ class C_Admin extends CI_Controller {
 		$data['data_kriteria1'] = $this->model_data->data('kode_kriteria','data_kriteria');
 		$data['data_kriteria2'] = $this->model_data->data('kode_kriteria','data_kriteria');
 		
-		// looping hitung matrik awal
+		
 		for ($x=0; $x <= ($n-2) ; $x++) {
 			for ($y=($x+1); $y <= ($n-1) ; $y++) {
 				$urut++;
@@ -517,9 +516,7 @@ class C_Admin extends CI_Controller {
 			}
 		}
 		
-		
 		//hapus
-		//matrikb=matrik bobot
 		for ($x=0; $x <= ($n-1) ; $x++) {
 			for ($y=0; $y <= ($n-1) ; $y++) {
 				$matrikb[$x][$y] = $matrik[$x][$y] / $jmlmpb[$y];
@@ -924,6 +921,7 @@ class C_Admin extends CI_Controller {
 		$tampil_data_lapangan = $this->model_data->tampil_data_lapangan();
 		$lapangan = $this->model_data->count_data_lapangan(); 
 		$i=0;
+		
 		$data_kriteria=[];
 		$data_alternatif_lengkap=[];
 		$data_alternatif_nama=[];
@@ -948,6 +946,7 @@ class C_Admin extends CI_Controller {
 		// print_r($data);x	
 		$data['total_kriteria']= count($kriteria);
 		$data['kriteria']= $kriteria;
+		
 		$data['lapangan']= $lapangan;
 		
 		foreach($lapangan as $key => $lap){
@@ -958,6 +957,7 @@ class C_Admin extends CI_Controller {
 			}
 		}
 		$data['i']= $i;
+		
 		if($data_kriteria){
 			$data['data_kriteria']= $data_kriteria;
 			$data['data_alternatif_nama'] =$data_alternatif_nama;
@@ -989,6 +989,7 @@ class C_Admin extends CI_Controller {
 		$tampil_data_lapangan = $this->model_data->tampil_data_lapangan();
 		$lapangan = $this->model_data->count_data_lapangan(); 
 		$i=0;
+		
 		$data_kriteria=[];
 		$data_alternatif_lengkap=[];
 		$data_alternatif_lengkap_nilai=[];
@@ -1012,7 +1013,6 @@ class C_Admin extends CI_Controller {
 		$data['total_kriteria']= count($kriteria);
 		$data['kriteria']= $kriteria;
 		$data['lapangan']= $lapangan;
-		
 		foreach($lapangan as $key => $lap){
 			
 			if($lap["total_sub"] < count($kriteria)){
@@ -1021,7 +1021,6 @@ class C_Admin extends CI_Controller {
 			}
 		}
 		$data['i']= $i;
-
 		if($data_kriteria){
 			$data['data_kriteria']= $data_kriteria;
 			$data['data_alternatif_nama'] =$data_alternatif_nama;

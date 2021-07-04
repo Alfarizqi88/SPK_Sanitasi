@@ -52,7 +52,7 @@
                                         <h2 class="mb-1"><?php $a=htmlentities($total_data_alternatif, ENT_QUOTES,'utf-8'); echo($a);?></h2>
                                     </div>
                                     <div class="float-right icon-circle-medium  icon-box-lg  bg-secondary-light mt-1">
-                                        <i class="fa fa-book fa-fw fa-sm text-secondary"></i>
+                                        <i class="fa fa-address-book fa-fw fa-sm text-secondary"></i>
                                     </div>
                                 </div>
                             </div>

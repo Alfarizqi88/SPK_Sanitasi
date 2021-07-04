@@ -87,8 +87,7 @@
                                     <td><?php echo $data_subkriteria['nilai_subkriteria'] ?></td>
                                     <td>
                                         <a href="<?php echo base_url('c_admin/tampil_edit_data_subkriteria')?>?id_subkriteria=<?php echo $data_subkriteria['id_subkriteria']?>"><button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button></a>
-                                        <a href="<?php echo base_url('c_admin/hapus_data_subkriteria')?>?id_subkriteria=<?php echo $data_subkriteria['id_subkriteria']?>"
-                                        onclick="return confirm('Are you sure?')"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
+                                        <a href="<?php echo base_url('c_admin/hapus_data_subkriteria')?>?id_subkriteria=<?php echo $data_subkriteria['id_subkriteria']?>"onclick="return confirm('Are you sure?')"><button class="btn btn-sm btn-danger "><i class="fas fa-trash-alt"></i></button></a>
                                     </td>
                                 </tr>
                                 <?php

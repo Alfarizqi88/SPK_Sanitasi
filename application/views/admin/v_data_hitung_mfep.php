@@ -15,7 +15,6 @@
     <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/dataTables.bootstrap4.css">
     <title>Data Perhitungan MFEP</title>
     
-    
 </head>
 
 <body>
@@ -35,9 +34,8 @@
                         echo "<br><h3 class='card-body'>Data Kosong</h3>";
                     }
                     else if($i > 0){
-                        echo "<br><h3 class='card-body'>Data survei belum lengkap</h3>";    
+                        echo "<br><h3 class='card-body'>Data belum lengkap</h3>";     
                     }
-                    
                     else{
                     ?>
                     <div class="card-body">              
@@ -126,9 +124,9 @@
                                     <td>".(++$i).".</td>
                                     <td>$nik</td>";
                                     $count_bobot = 0;
+
                                   foreach($kriteria as $k){
                                     $id_kriteria = $k['id_kriteria'];
-                                    
                                     // $normalisasi = $krit[$id_kriteria]*$bobot[($id_kriteria-1)];
                                     $normalisasi = $krit[$id_kriteria]*$bobot[$count_bobot];
                                     $count_bobot++;
@@ -140,7 +138,7 @@
                             <?php
                                 $arr[] = ["nik" => $nik , "total" => $hitung];
                                 $hitung = 0;
-                                $j++;
+                                  $j++;
                                 }
                             ?>
                             </tbody>
@@ -219,7 +217,7 @@
 
                                 foreach($arr as $arr){
                                     $i++;
-                                    if($i<=33){
+                                    if($i<=32){
                                   ?>
                                   <tr>
                                     <td><?php echo $i?></td>
@@ -244,7 +242,7 @@
                     ?>
                 </div>
                 <?php
-                  }
+                    }
                 ?>
             </div>
         </div>

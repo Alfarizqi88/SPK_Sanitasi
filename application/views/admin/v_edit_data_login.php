@@ -65,7 +65,7 @@
                                         <label class="control-label col-xs-3" >Level<span class="text-danger">*</span></label>
                                         <div class="col-xs-8">
                                         <select class='form-control' id='exampleFormControlSelect2' name='level' value="<?php echo $data_login['level']?>" required >
-                                            <option value="">-- Level User --</option>
+                                             <option value="">-- Level User --</option>
                                             <option value="Admin">Admin</option>
                                             <option value="Pihak Pelaksana">Pihak Pelaksana</option>
                                         </select>

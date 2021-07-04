@@ -45,7 +45,6 @@
                             <tbody>
                                 <?php
                                     $number = 0;
-                                    // Foreach di gunakan untuk perulangan yang datanya dalam bentuk array.
                                     foreach($data_alternatif as $data_alternatif)
                                     {
                                         $number ++;    

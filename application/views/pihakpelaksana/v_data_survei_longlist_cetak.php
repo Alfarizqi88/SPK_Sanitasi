@@ -15,7 +15,8 @@
     <link rel="stylesheet" type="text/css" href="../assets/vendor/datatables/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <title>Data Survei Longlist</title>
+    <title>Cetak Data Survei Longlist</title>
+    <?php error_reporting(0) ?>
 </head>
 
 <body>
@@ -52,7 +53,7 @@
                             <tbody>
                             <?php
                                 $i=0;
-                                $list_nik=-1;
+                                $list_nik=0;
                                 // if($data_kriteria!=null){
                                     foreach($data_kriteria as $nik=>$krit){
                                         echo "<tr>
@@ -62,7 +63,15 @@
                                         foreach($kriteria as $k){
                                           $id_kriteria = $k['id_kriteria'];
                                           echo "<td align='center'>$krit[$id_kriteria]</td>";
-                                          $list_nik++;
+                                        //   $list_nik++;
+                                            switch ($list_nik) {
+                                                case 0:
+                                                    $list_nik = 0;
+                                                    break;
+                                                default:
+                                                    $list_nik++;
+                                                    break;
+                                            }
                                         }
                                 // }
                                 

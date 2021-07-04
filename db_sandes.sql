@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 20, 2021 at 09:50 PM
+-- Generation Time: Jul 04, 2021 at 02:38 PM
 -- Server version: 10.3.27-MariaDB
 -- PHP Version: 7.3.28
 
@@ -1116,8 +1116,9 @@ CREATE TABLE `data_login` (
 --
 
 INSERT INTO `data_login` (`id_datalogin`, `nama`, `divisi`, `no_telepon`, `username`, `password`, `level`) VALUES
-(17, 'User1', 'TFL', '081098765432', 'user', 'user', 'Pihak Pelaksana'),
-(39, 'Alfarizqi Abiyyu', 'D4', '081234567890', 'admin', 'admin', 'Admin');
+(17, 'User1', 'TFL', '081098765432', 'user', '1234', 'Pihak Pelaksana'),
+(39, 'Alfarizqi Abiyyu', 'D4', '081234567890', 'admin', '1234', 'Admin'),
+(45, 'kosong', 'kosong', '0', 'user2', '1234', 'Pihak Pelaksana');
 
 -- --------------------------------------------------------
 
@@ -1281,7 +1282,7 @@ ALTER TABLE `data_lapangan`
 -- AUTO_INCREMENT for table `data_login`
 --
 ALTER TABLE `data_login`
-  MODIFY `id_datalogin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_datalogin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `data_manual_book`

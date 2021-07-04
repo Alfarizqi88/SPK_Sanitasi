@@ -33,10 +33,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url('c_pihakpelaksana/data_hasil_laporan') ?>"><i class="fa fa-fw fa-eye"></i>Hasil Laporan</a>
-                        </li>       
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="<?php echo base_url('c_pihakpelaksana/read_manual_book') ?>"><i class="fa fa-fw fa-book"></i>Manual Book</a>
-                        </li>                   
+                            <a class="nav-link " href="<?php echo base_url('c_pihakpelaksana/read_manual_book') ?>"><i class="fa fa-fw fa-book"></i>Pedoman Sistem</a>
+                        </li>
                     </ul>
                 </div>                            
             </nav>

@@ -22,7 +22,7 @@
                 <div class="card">
                     <div class="card-body">
                         <!-- note nilai perbandingan -->
-                        <h4 class="card-header">NOTE NILAI PERBANDINGAN BERPASANGAN</h4>
+                        <h4 class="card-header text-danger">NOTE NILAI PERBANDINGAN BERPASANGAN</h4>
                         <table class="table table-hover" id="mytable">
                             <thead>
                                 <tr>
@@ -110,7 +110,7 @@
                                                         </select>
                                                     </td>
                                                     <td>
-                                                        <input type ="number" name="nilai<?php echo $number ?>" class="form-control" value="3"required></input>
+                                                        <input type ="number" name="nilai<?php echo $number ?>" class="form-control" required></input>
                                                     <td>
                                                 </tr>
                                     <?php
